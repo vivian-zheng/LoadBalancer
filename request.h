@@ -5,14 +5,22 @@
 
 using std::string;
 
-class request {
+class Request {
     public:    
         //constructor, destructor, getter, setter
+        Request();
+        ~Request();
+        int getRuntime() const {return runtime;}
+        string getIPin() const {return IPin;}
+        string getIPout() const {return IPout;}
+
+        // Helper function to generate IP
+        string generateIP();
     
     private:
         string IPin;
         string IPout;
-        double time;        // Amount of time each request takes
+        int runtime;        // Amount of time each request takes
 };
 
 #endif

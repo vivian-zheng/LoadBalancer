@@ -5,7 +5,7 @@
 
 using std::string;
 
-class webserver {
+class Webserver {
     public:    
         //constructor, destructor, getter, setter
 
