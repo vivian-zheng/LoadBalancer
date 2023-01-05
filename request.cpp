@@ -6,6 +6,10 @@
 
 using std::cout, std::endl, std::stoi, std::to_string;
 
+/**
+* @brief Generates a random IP address in the format "XXX.XXX.XXX.XXX".
+* @return A string containing the generated IP address.
+*/
 string Request::generateIP() {
     string IP = "";
 
@@ -19,15 +23,23 @@ string Request::generateIP() {
     return IP;
 }
 
+/**
+* @brief Constructor for the Request class.
+* @details Initializes the runtime and generates the IPin and IPout fields by calling the generateIP() function.
+*/
 Request::Request() {
     // Generating the random runtime
-    runtime = 2 + rand() % 100;
+    runtime = 2 + rand() % 235;
 
     // Generating the IP Addresses
     IPin = generateIP();
     IPout = generateIP();
 }
 
+/**
+* @brief Destructor for the Request class.
+* @details Resets the values of the runtime, startTime, IPin, and IPout fields.
+*/
 Request::~Request() {
     runtime = 0;
     startTime = 0;

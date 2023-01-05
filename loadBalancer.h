@@ -15,6 +15,7 @@ class LoadBalancer {
 
         Request* popRequest();
         void pushRequest(Request* r);
+        vector<Request*> getRequestVector() {return requestQueue;}
 
     
     private:

@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include <stdlib.h>  
 #include <string>
 #include "time.h"
@@ -7,15 +8,19 @@
 #include "request.h"
 #include "webserver.h"
 
-using std::cout, std::endl, std::to_string;
+using std::cout, std::endl, std::to_string, std::cin, std::ofstream;
 
 vector<Webserver*> servers;
 LoadBalancer lb;
 int numServers = 0;
 int currCycle = 0;
 
+ofstream logfile;
+
+int randomSendTime = -1;
+
 int MAX_CLOCK_CYCLES = 10000;
-int NUM_REQUESTS = 10000;
+int NUM_REQUESTS = 200;
 
 void initializeServers(int numServers) {
     for(int i = 0; i < numServers; i++) {
@@ -32,20 +37,23 @@ void initializeQueue(int initalNum) {
 }
 
 void pushRandomRequests() {
-    int numRequests = 2 + rand() % 100;
+    int numRequests = rand() % 2;
     for(int i = 0; i < numRequests; i++) {
         Request* r = new Request();
         lb.pushRequest(r);
     }
 }
 
-
 int main() {
     // Seed a time for better randomness
     srand(time(0));
 
+    // Open file for writing
+    logfile.open("load_balancer_log.txt");
+
     // INITIALIZE SERVERS
-    numServers = 10;
+    cout << "Please enter the number of servers you want: ";
+    cin >> numServers;
     initializeServers(numServers);
 
     // Test if servers initialized
@@ -59,7 +67,10 @@ int main() {
     // Loop through each clock cycle
     while(currCycle < MAX_CLOCK_CYCLES) {
         //Randomly add new requests
-        
+        if(randomSendTime <= currCycle) {
+            pushRandomRequests();
+            randomSendTime = (rand() % 10) + currCycle + 2;
+        }
 
         // Loop through each server
         for(int i = 0; i < numServers; i++) {
@@ -86,16 +97,20 @@ int main() {
             
             // If the current request is done, output status and set the new status of the server to available
             if(currCycle == endTime) {
-                cout << "Clock cycle " << currCycle << ": server " << currServer->getName() << " completed request from " << currServer->getRequest()->getIPin() << " to " << currServer->getRequest()->getIPout() << endl;
+                string logString = "Clock cycle " + to_string(currCycle) + ": server " + currServer->getName() + " completed request from " + currServer->getRequest()->getIPin() + " to " + currServer->getRequest()->getIPout() + "\n";
+                cout << logString;
+                logfile << logString;
                 currServer->setStatus();
             }
         }
         currCycle++;
-
     }
 
+    string endSizeString = "End size: " + to_string(lb.getRequestVector().size()) + "\n";
+    cout << "End size: " << lb.getRequestVector().size() << endl;
+    logfile << endSizeString;
     
-
+    logfile.close();
 
 
     return 0;
