@@ -1,10 +1,11 @@
 #include <iostream>
 #include <stdlib.h>  
-#include <time.h>
+
+#include "webserver.h"
 
 using std::cout, std::endl;
 
-class webserver {
+class Webserver {
 
     
     
