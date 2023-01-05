@@ -30,6 +30,7 @@ Request::Request() {
 
 Request::~Request() {
     runtime = 0;
+    startTime = 0;
     IPin = "";
     IPout = "";
 }

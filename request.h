@@ -11,8 +11,11 @@ class Request {
         Request();
         ~Request();
         int getRuntime() const {return runtime;}
+        int getStartTime() const {return startTime;}
         string getIPin() const {return IPin;}
         string getIPout() const {return IPout;}
+
+        void setStartTime(int sT) {startTime = sT;}
 
         // Helper function to generate IP
         string generateIP();
@@ -21,6 +24,7 @@ class Request {
         string IPin;
         string IPout;
         int runtime;        // Amount of time each request takes
+        int startTime;
 };
 
 #endif
