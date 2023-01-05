@@ -5,12 +5,9 @@
 
 using std::cout, std::endl;
 
-class Webserver {
-
-    
-    
-    
-};
+void Webserver::setProcess(Request* r) {
+    currReq = r;
+}
 
 int main() {
 

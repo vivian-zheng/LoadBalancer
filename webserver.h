@@ -8,19 +8,13 @@ using std::string;
 
 class Webserver {
     public:    
-        //constructor, destructor, getter, setter
         Webserver();
         ~Webserver();
-        void changeStatus();
         void setProcess(Request* r);
-
-        //get request
-        //process request
-        //ask for request
+        int getStatus() {return status;}
     
     private:
-        //process 
-        Request currReq;
+        Request* currReq;
         int status;         //0 = busy, 1 = available
 };
 
