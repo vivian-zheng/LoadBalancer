@@ -29,7 +29,7 @@ string Request::generateIP() {
 */
 Request::Request() {
     // Generating the random runtime
-    runtime = 2 + rand() % 235;
+    runtime = 2 + rand() % 240;
 
     // Generating the IP Addresses
     IPin = generateIP();

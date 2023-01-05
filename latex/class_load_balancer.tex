@@ -1,0 +1,91 @@
+\hypertarget{class_load_balancer}{}\doxysection{Load\+Balancer Class Reference}
+\label{class_load_balancer}\index{LoadBalancer@{LoadBalancer}}
+
+
+Class representing a load balancer in the load balancing simulation.  
+
+
+
+
+{\ttfamily \#include $<$load\+Balancer.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_load_balancer_a6e6669a6a4f0c3df345a13246b17a84b}\label{class_load_balancer_a6e6669a6a4f0c3df345a13246b17a84b}} 
+{\bfseries Load\+Balancer} ()
+\begin{DoxyCompactList}\small\item\em Constructor for the \mbox{\hyperlink{class_load_balancer}{Load\+Balancer}} class. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_load_balancer_a69951a7bb77be7fafd4d5ad6919abd80}\label{class_load_balancer_a69951a7bb77be7fafd4d5ad6919abd80}} 
+{\bfseries $\sim$\+Load\+Balancer} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \mbox{\hyperlink{class_load_balancer}{Load\+Balancer}} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_request}{Request}} $\ast$ \mbox{\hyperlink{class_load_balancer_a030debcdad09ed8f57ac1dbbf2ae96ab}{pop\+Request}} ()
+\begin{DoxyCompactList}\small\item\em Removes a request from the request queue. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_load_balancer_ab04e83c07895b46d9ad14be5c9050bd6}{push\+Request}} (\mbox{\hyperlink{class_request}{Request}} $\ast$r)
+\begin{DoxyCompactList}\small\item\em Adds a request to the request queue. \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{class_request}{Request}} $\ast$ $>$ \mbox{\hyperlink{class_load_balancer_a0e04e21ad1b3cf3610046a0dc3dd8726}{get\+Request\+Vector}} ()
+\begin{DoxyCompactList}\small\item\em Gets the request queue. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class representing a load balancer in the load balancing simulation. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_load_balancer_a0e04e21ad1b3cf3610046a0dc3dd8726}\label{class_load_balancer_a0e04e21ad1b3cf3610046a0dc3dd8726}} 
+\index{LoadBalancer@{LoadBalancer}!getRequestVector@{getRequestVector}}
+\index{getRequestVector@{getRequestVector}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{getRequestVector()}{getRequestVector()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{class_request}{Request}} $\ast$ $>$ Load\+Balancer\+::get\+Request\+Vector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the request queue. 
+
+\begin{DoxyReturn}{Returns}
+The request queue. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_load_balancer_a030debcdad09ed8f57ac1dbbf2ae96ab}\label{class_load_balancer_a030debcdad09ed8f57ac1dbbf2ae96ab}} 
+\index{LoadBalancer@{LoadBalancer}!popRequest@{popRequest}}
+\index{popRequest@{popRequest}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{popRequest()}{popRequest()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_request}{Request}} $\ast$ Load\+Balancer\+::pop\+Request (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Removes a request from the request queue. 
+
+\begin{DoxyReturn}{Returns}
+The request that was removed from the queue.
+\end{DoxyReturn}
+
+
+\begin{DoxyReturn}{Returns}
+The request that was removed from the queue, or {\ttfamily nullptr} if the queue is empty. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_load_balancer_ab04e83c07895b46d9ad14be5c9050bd6}\label{class_load_balancer_ab04e83c07895b46d9ad14be5c9050bd6}} 
+\index{LoadBalancer@{LoadBalancer}!pushRequest@{pushRequest}}
+\index{pushRequest@{pushRequest}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{pushRequest()}{pushRequest()}}
+{\footnotesize\ttfamily void Load\+Balancer\+::push\+Request (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_request}{Request}} $\ast$}]{r }\end{DoxyParamCaption})}
+
+
+
+Adds a request to the request queue. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & The request to add to the queue.\\
+\hline
+\end{DoxyParams}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & The request to add to the queue. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{load_balancer_8h}{load\+Balancer.\+h}}\item 
+load\+Balancer.\+cpp\end{DoxyCompactItemize}

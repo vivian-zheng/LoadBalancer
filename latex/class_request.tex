@@ -1,0 +1,149 @@
+\hypertarget{class_request}{}\doxysection{Request Class Reference}
+\label{class_request}\index{Request@{Request}}
+
+
+Class representing a request in the load balancing simulation.  
+
+
+
+
+{\ttfamily \#include $<$request.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_request_afaf8d8928de7ffff8a3767589489bd33}{Request}} ()
+\begin{DoxyCompactList}\small\item\em Constructor for the \mbox{\hyperlink{class_request}{Request}} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_request_a4d57c725686701f773eb3630630a7ea2}{$\sim$\+Request}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \mbox{\hyperlink{class_request}{Request}} class. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_request_a33a174515353c7fe233ffe2b7cf9195b}{get\+Runtime}} () const
+\begin{DoxyCompactList}\small\item\em Gets the runtime of the request. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_request_ad091c0a8b4ac7c97e1800f6e8004fe7c}{get\+Start\+Time}} () const
+\begin{DoxyCompactList}\small\item\em Gets the start time of the request. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_request_a7f14f45f4a10c4a822f49a2bade3d7e4}{get\+IPin}} () const
+\begin{DoxyCompactList}\small\item\em Gets the incoming IP address of the request. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_request_a3ab594457a845e5d1fba39adddfab64f}{get\+IPout}} () const
+\begin{DoxyCompactList}\small\item\em Gets the outgoing IP address of the request. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_request_ac896ff5dd53e07b0f0310963eb72527a}{set\+Start\+Time}} (int sT)
+\begin{DoxyCompactList}\small\item\em Sets the start time of the request. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_request_a06c3139b8859264ce63d766d444c7d43}{generate\+IP}} ()
+\begin{DoxyCompactList}\small\item\em Helper function to generate a random IP address. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class representing a request in the load balancing simulation. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_request_afaf8d8928de7ffff8a3767589489bd33}\label{class_request_afaf8d8928de7ffff8a3767589489bd33}} 
+\index{Request@{Request}!Request@{Request}}
+\index{Request@{Request}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{Request()}{Request()}}
+{\footnotesize\ttfamily Request\+::\+Request (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor for the \mbox{\hyperlink{class_request}{Request}} class. 
+
+Initializes the runtime and generates the IPin and IPout fields by calling the \mbox{\hyperlink{class_request_a06c3139b8859264ce63d766d444c7d43}{generate\+IP()}} function. \mbox{\Hypertarget{class_request_a4d57c725686701f773eb3630630a7ea2}\label{class_request_a4d57c725686701f773eb3630630a7ea2}} 
+\index{Request@{Request}!````~Request@{$\sim$Request}}
+\index{````~Request@{$\sim$Request}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{$\sim$Request()}{~Request()}}
+{\footnotesize\ttfamily Request\+::$\sim$\+Request (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor for the \mbox{\hyperlink{class_request}{Request}} class. 
+
+Resets the values of the runtime, start\+Time, IPin, and IPout fields. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_request_a06c3139b8859264ce63d766d444c7d43}\label{class_request_a06c3139b8859264ce63d766d444c7d43}} 
+\index{Request@{Request}!generateIP@{generateIP}}
+\index{generateIP@{generateIP}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{generateIP()}{generateIP()}}
+{\footnotesize\ttfamily string Request\+::generate\+IP (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Helper function to generate a random IP address. 
+
+Generates a random IP address in the format \char`\"{}\+XXX.\+XXX.\+XXX.\+XXX\char`\"{}.
+
+\begin{DoxyReturn}{Returns}
+The generated IP address.
+
+A string containing the generated IP address. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_request_a7f14f45f4a10c4a822f49a2bade3d7e4}\label{class_request_a7f14f45f4a10c4a822f49a2bade3d7e4}} 
+\index{Request@{Request}!getIPin@{getIPin}}
+\index{getIPin@{getIPin}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{getIPin()}{getIPin()}}
+{\footnotesize\ttfamily string Request\+::get\+IPin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the incoming IP address of the request. 
+
+\begin{DoxyReturn}{Returns}
+The incoming IP address of the request. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_request_a3ab594457a845e5d1fba39adddfab64f}\label{class_request_a3ab594457a845e5d1fba39adddfab64f}} 
+\index{Request@{Request}!getIPout@{getIPout}}
+\index{getIPout@{getIPout}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{getIPout()}{getIPout()}}
+{\footnotesize\ttfamily string Request\+::get\+IPout (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the outgoing IP address of the request. 
+
+\begin{DoxyReturn}{Returns}
+The outgoing IP address of the request. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_request_a33a174515353c7fe233ffe2b7cf9195b}\label{class_request_a33a174515353c7fe233ffe2b7cf9195b}} 
+\index{Request@{Request}!getRuntime@{getRuntime}}
+\index{getRuntime@{getRuntime}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{getRuntime()}{getRuntime()}}
+{\footnotesize\ttfamily int Request\+::get\+Runtime (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the runtime of the request. 
+
+\begin{DoxyReturn}{Returns}
+The runtime of the request. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_request_ad091c0a8b4ac7c97e1800f6e8004fe7c}\label{class_request_ad091c0a8b4ac7c97e1800f6e8004fe7c}} 
+\index{Request@{Request}!getStartTime@{getStartTime}}
+\index{getStartTime@{getStartTime}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{getStartTime()}{getStartTime()}}
+{\footnotesize\ttfamily int Request\+::get\+Start\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the start time of the request. 
+
+\begin{DoxyReturn}{Returns}
+The start time of the request. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_request_ac896ff5dd53e07b0f0310963eb72527a}\label{class_request_ac896ff5dd53e07b0f0310963eb72527a}} 
+\index{Request@{Request}!setStartTime@{setStartTime}}
+\index{setStartTime@{setStartTime}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{setStartTime()}{setStartTime()}}
+{\footnotesize\ttfamily void Request\+::set\+Start\+Time (\begin{DoxyParamCaption}\item[{int}]{sT }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the start time of the request. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sT} & The start time to set. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{request_8h}{request.\+h}}\item 
+request.\+cpp\end{DoxyCompactItemize}

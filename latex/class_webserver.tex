@@ -1,0 +1,128 @@
+\hypertarget{class_webserver}{}\doxysection{Webserver Class Reference}
+\label{class_webserver}\index{Webserver@{Webserver}}
+
+
+Class representing a web server in the load balancing simulation.  
+
+
+
+
+{\ttfamily \#include $<$webserver.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_webserver_ac66530e2c75f4489f3fd0a37d1265a21}{Webserver}} (string name)
+\begin{DoxyCompactList}\small\item\em Constructor for the \mbox{\hyperlink{class_webserver}{Webserver}} class. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_webserver_ae49330051c77505a635f02c6fbd6edd5}\label{class_webserver_ae49330051c77505a635f02c6fbd6edd5}} 
+{\bfseries $\sim$\+Webserver} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \mbox{\hyperlink{class_webserver}{Webserver}} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_webserver_ac6d72d84452eb7072d9c18a556b82d44}{set\+Process}} (\mbox{\hyperlink{class_request}{Request}} $\ast$r)
+\begin{DoxyCompactList}\small\item\em Sets the current request being processed by the server. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_request}{Request}} $\ast$ \mbox{\hyperlink{class_webserver_a62bd802d919429a0229a913e7ef7191e}{get\+Request}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current request being processed by the server. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_webserver_ab510e849ce9a684c2e247d488c149f31}{get\+Status}} ()
+\begin{DoxyCompactList}\small\item\em Gets the status of the server. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_webserver_a48ec046df2954dfd0c1da6ba127ce9b0}\label{class_webserver_a48ec046df2954dfd0c1da6ba127ce9b0}} 
+void {\bfseries set\+Status} ()
+\begin{DoxyCompactList}\small\item\em Sets the status of the server. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_webserver_a7947099345655d9deceb05b37e06978c}{get\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Gets the name of the server. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class representing a web server in the load balancing simulation. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_webserver_ac66530e2c75f4489f3fd0a37d1265a21}\label{class_webserver_ac66530e2c75f4489f3fd0a37d1265a21}} 
+\index{Webserver@{Webserver}!Webserver@{Webserver}}
+\index{Webserver@{Webserver}!Webserver@{Webserver}}
+\doxysubsubsection{\texorpdfstring{Webserver()}{Webserver()}}
+{\footnotesize\ttfamily Webserver\+::\+Webserver (\begin{DoxyParamCaption}\item[{string}]{n }\end{DoxyParamCaption})}
+
+
+
+Constructor for the \mbox{\hyperlink{class_webserver}{Webserver}} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the server.\\
+\hline
+\end{DoxyParams}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & The name of the server. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_webserver_a7947099345655d9deceb05b37e06978c}\label{class_webserver_a7947099345655d9deceb05b37e06978c}} 
+\index{Webserver@{Webserver}!getName@{getName}}
+\index{getName@{getName}!Webserver@{Webserver}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily string Webserver\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the name of the server. 
+
+\begin{DoxyReturn}{Returns}
+The name of the server. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_webserver_a62bd802d919429a0229a913e7ef7191e}\label{class_webserver_a62bd802d919429a0229a913e7ef7191e}} 
+\index{Webserver@{Webserver}!getRequest@{getRequest}}
+\index{getRequest@{getRequest}!Webserver@{Webserver}}
+\doxysubsubsection{\texorpdfstring{getRequest()}{getRequest()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_request}{Request}} $\ast$ Webserver\+::get\+Request (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the current request being processed by the server. 
+
+\begin{DoxyReturn}{Returns}
+The current request being processed by the server. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_webserver_ab510e849ce9a684c2e247d488c149f31}\label{class_webserver_ab510e849ce9a684c2e247d488c149f31}} 
+\index{Webserver@{Webserver}!getStatus@{getStatus}}
+\index{getStatus@{getStatus}!Webserver@{Webserver}}
+\doxysubsubsection{\texorpdfstring{getStatus()}{getStatus()}}
+{\footnotesize\ttfamily int Webserver\+::get\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the status of the server. 
+
+\begin{DoxyReturn}{Returns}
+The status of the server. 0 if busy, 1 if available. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_webserver_ac6d72d84452eb7072d9c18a556b82d44}\label{class_webserver_ac6d72d84452eb7072d9c18a556b82d44}} 
+\index{Webserver@{Webserver}!setProcess@{setProcess}}
+\index{setProcess@{setProcess}!Webserver@{Webserver}}
+\doxysubsubsection{\texorpdfstring{setProcess()}{setProcess()}}
+{\footnotesize\ttfamily void Webserver\+::set\+Process (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_request}{Request}} $\ast$}]{r }\end{DoxyParamCaption})}
+
+
+
+Sets the current request being processed by the server. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & The request to set.\\
+\hline
+\end{DoxyParams}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & The request to set. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{webserver_8h}{webserver.\+h}}\item 
+webserver.\+cpp\end{DoxyCompactItemize}
