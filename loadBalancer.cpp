@@ -4,16 +4,30 @@
 #include "loadBalancer.h"
 #include "request.h"
 
+/**
+ * @brief Namespace for the standard C++ library.
+ */
 using std::cout, std::endl;
 
+/**
+ * @brief Constructor for the LoadBalancer class.
+ */
 LoadBalancer::LoadBalancer() {
-    
+
 }
 
+/**
+ * @brief Destructor for the LoadBalancer class.
+ */
 LoadBalancer::~LoadBalancer() {
 
 }
 
+/**
+ * @brief Removes a request from the request queue.
+ *
+ * @return The request that was removed from the queue, or `nullptr` if the queue is empty.
+ */
 Request* LoadBalancer::popRequest() {
     if(requestQueue.empty()) {
         return nullptr;
@@ -25,9 +39,15 @@ Request* LoadBalancer::popRequest() {
     return newReq;
 }
 
+/**
+ * @brief Adds a request to the request queue.
+ *
+ * @param r The request to add to the queue.
+ */
 void LoadBalancer::pushRequest(Request* r) {
     requestQueue.push_back(r);
 }
+
 
 // int main() {
 //     LoadBalancer lb;

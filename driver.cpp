@@ -10,18 +10,51 @@
 
 using std::cout, std::endl, std::to_string, std::cin, std::ofstream;
 
+/**
+ * @brief Vector of pointers to Webserver objects representing the servers in the simulation.
+ */
 vector<Webserver*> servers;
+
+/**
+ * @brief LoadBalancer object representing the load balancer in the simulation.
+ */
 LoadBalancer lb;
+
+/**
+ * @brief Integer variable representing the number of servers in the simulation.
+ */
 int numServers = 0;
+
+/**
+ * @brief Integer variable representing the current clock cycle in the simulation.
+ */
 int currCycle = 0;
 
+/**
+ * @brief ofstream object for writing log information to a file.
+ */
 ofstream logfile;
 
+/**
+ * @brief Integer variable representing the next time a random request will be added to the simulation.
+ */
 int randomSendTime = -1;
 
+/**
+ * @brief Integer constant representing the maximum number of clock cycles in the simulation.
+ */
 int MAX_CLOCK_CYCLES = 10000;
+
+/**
+ * @brief Integer constant representing the initial number of requests in the simulation.
+ */
 int NUM_REQUESTS = 200;
 
+/**
+ * @brief Initializes the servers in the simulation.
+ *
+ * @param numServers The number of servers to initialize.
+ */
 void initializeServers(int numServers) {
     for(int i = 0; i < numServers; i++) {
         Webserver* w = new Webserver(to_string(i + 1));
@@ -29,6 +62,11 @@ void initializeServers(int numServers) {
     }
 }
 
+/**
+ * @brief Initializes the request queue in the load balancer with a given number of requests.
+ *
+ * @param initalNum The number of requests to add to the queue.
+ */
 void initializeQueue(int initalNum) {
     for(int i = 0; i < initalNum; i++) {
         Request* r = new Request();
@@ -36,6 +74,9 @@ void initializeQueue(int initalNum) {
     }
 }
 
+/**
+ * @brief Adds a random number of requests to the request queue in the load balancer.
+ */
 void pushRandomRequests() {
     int numRequests = rand() % 2;
     for(int i = 0; i < numRequests; i++) {
@@ -44,6 +85,11 @@ void pushRandomRequests() {
     }
 }
 
+/**
+ * @brief The main function of the program.
+ *
+ * @return The exit code of the program.
+ */
 int main() {
     // Seed a time for better randomness
     srand(time(0));
@@ -55,11 +101,6 @@ int main() {
     cout << "Please enter the number of servers you want: ";
     cin >> numServers;
     initializeServers(numServers);
-
-    // Test if servers initialized
-    // for(int i = 0; i < 10; i++) {
-    //     cout << servers.at(i)->getName() << endl;
-    // }
 
     // ADD 1000 RANDOM REQUESTS TO QUEUE in LB
     initializeQueue(NUM_REQUESTS);
@@ -94,7 +135,7 @@ int main() {
 
             // Check if the current request is done (by comparing current time with estimated end time)
             int endTime = currServer->getRequest()->getRuntime() + currServer->getRequest()->getStartTime();
-            
+
             // If the current request is done, output status and set the new status of the server to available
             if(currCycle == endTime) {
                 string logString = "Clock cycle " + to_string(currCycle) + ": server " + currServer->getName() + " completed request from " + currServer->getRequest()->getIPin() + " to " + currServer->getRequest()->getIPout() + "\n";
@@ -107,11 +148,11 @@ int main() {
     }
 
     string endSizeString = "End size: " + to_string(lb.getRequestVector().size()) + "\n";
-    cout << "End size: " << lb.getRequestVector().size() << endl;
+    cout << "End size of queue: " << lb.getRequestVector().size() << endl;
     logfile << endSizeString;
-    
-    logfile.close();
 
+    // Close file
+    logfile.close();
 
     return 0;
 }
