@@ -4,6 +4,8 @@
 #include "loadBalancer.h"
 #include "request.h"
 
+//NOTE: all doxygen comments completed with chatGPT
+
 /**
  * @brief Namespace for the standard C++ library.
  */

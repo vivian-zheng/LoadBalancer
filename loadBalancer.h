@@ -4,6 +4,8 @@
 #include <string>
 #include <vector>
 
+//NOTE: all doxygen comments completed with chatGPT
+
 /**
  * @file loadbalancer.h
  *

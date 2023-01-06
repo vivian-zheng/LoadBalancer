@@ -3,6 +3,8 @@
 
 #include <string>
 
+//NOTE: all doxygen comments completed with chatGPT
+
 /**
  * @file webserver.h
  *

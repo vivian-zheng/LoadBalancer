@@ -6,6 +6,8 @@
 
 using std::cout, std::endl, std::stoi, std::to_string;
 
+//NOTE: all doxygen comments completed with chatGPT
+
 /**
 * @brief Generates a random IP address in the format "XXX.XXX.XXX.XXX".
 * @return A string containing the generated IP address.

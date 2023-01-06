@@ -10,6 +10,8 @@
 
 using std::cout, std::endl, std::to_string, std::cin, std::ofstream;
 
+//NOTE: all doxygen comments completed with chatGPT
+
 /**
  * @brief Vector of pointers to Webserver objects representing the servers in the simulation.
  */
